@@ -56,3 +56,25 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
     }
     
 });
+
+document.querySelector('.btn-hold').addEventListener('click', function() {
+    //add CURRENT score
+    scores[activePlayer] += roundScore;
+    
+    //update the UI
+    document.getElementById('score-' + activePlayer).textContent = scores[activePlayer];
+    
+    //check if player won the game
+    if (scores[activePlayer] >= 20) {
+        document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
+        document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
+        document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
+        document.querySelector('.dice').style.display = 'none';
+    } else {
+        //next player
+        nextPlayer();
+    }
+    
+    
+    
+});

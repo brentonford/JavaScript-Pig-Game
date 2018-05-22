@@ -37,6 +37,28 @@ body {
     overflow: hidden;
 }
 
+.input-score {
+    position: absolute;
+    left: 60%;
+    color: #555;
+    font-family: Lato;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 300;
+    top: 45px;
+}
+
+.global-score {
+    position: absolute;
+    left: 50%;
+    color: #555;
+    font-family: Lato;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 300;
+    top: 90px;
+}
+
 .player-0-panel,
 .player-1-panel {
     width: 50%;

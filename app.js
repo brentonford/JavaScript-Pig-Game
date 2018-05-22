@@ -29,8 +29,8 @@ function init() {
     gamePlaying = true;
 
 
-    document.querySelector('.dice-1').style.display = 'none';
-    document.querySelector('.dice-2').style.display = 'none';
+    document.getElementById('dice-1').style.display = 'none';
+    document.getElementById('dice-2').style.display = 'none';
 
     document.getElementById('score-0').textContent = '0';
     document.getElementById('score-1').textContent = '0';
@@ -56,8 +56,8 @@ function nextPlayer() {
     document.getElementById('current-1').textContent = '0';
     document.querySelector('.player-0-panel').classList.toggle('active');
     document.querySelector('.player-1-panel').classList.toggle('active');
-    document.querySelector('.dice-1').style.display = 'none';
-    document.querySelector('.dice-2').style.display = 'none';
+    document.getElementById('dice-1').style.display = 'none';
+    document.getElementById('dice-2').style.display = 'none';
 }
 
 document.querySelector('.btn-roll').addEventListener('click', function() {
@@ -67,13 +67,10 @@ document.querySelector('.btn-roll').addEventListener('click', function() {
         var diceTwo = Math.floor(Math.random() * 6) + 1;
 
         //2. Display the result
-        var diceOneDOM = document.querySelector('.dice-1');
-        diceOneDOM.style.display = 'block';
-        diceOneDOM.src = 'dice-' + diceOne + '.png';
-        
-        var diceTwoDOM = document.querySelector('.dice-2');
-        diceTwoDOM.style.display = 'block';
-        diceTwoDOM.src = 'dice-' + diceTwo + '.png';
+        document.getElementById('dice-1').style.display = 'block';
+        document.getElementById('dice-2').style.display = 'block';
+        document.getElementById('dice-1').src = 'dice-' + diceOne + '.png';
+        document.getElementById('dice-2').src = 'dice-' + diceTwo + '.png';
             
         //3. Update the round score If the rolled number was NOT a 1
         if (diceOne !== 1 && diceTwo !==  1) {
@@ -114,8 +111,8 @@ document.querySelector('.btn-hold').addEventListener('click', function() {
             document.querySelector('.player-' + activePlayer + '-panel').classList.remove('active');
             document.getElementById('current-0').textContent = '0';
             document.getElementById('current-1').textContent = '0';
-            document.querySelector('.dice-1').style.display = 'none';
-            document.querySelector('.dice-2').style.display = 'none';
+            document.getElementById('dice-1').style.display = 'none';
+            document.getElementById('dice-2').style.display = 'none';
         } else {
             //next player
             nextPlayer();
